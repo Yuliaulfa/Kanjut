@@ -1078,12 +1078,6 @@ def menu():
     os.system('clear')
     try:
     	romz = open('data/token.txt', 'r').read()
-    except IOError:
-        print ("%s%s Token invalid "%(M,til));jeda(2);os.system('rm -rf data/token.txt && rm -rf data/cookies');masuk()
-    try:
-        r = requests.get('https://graph.facebook.com/me?access_token='+romz,headers=header)
-        a = json.loads(r.text)
-        nama = a["name"]
     except KeyError:
         print ("%s%s Token invalid "%(M,til));jeda(2);os.system('rm -rf data/token.txt && rm -rf data/cookies');masuk()
     except requests.exceptions.ConnectionError:
